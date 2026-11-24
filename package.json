@@ -1,0 +1,47 @@
+{
+  "name": "dsh-token-guard",
+  "version": "0.1.0",
+  "description": "DSH 里的傻瓜式 Token 审计：一个工具扫会话，告诉你钱花在哪、哪几条最值得改。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./audit": "./lib/audit.js",
+    "./sessions": "./lib/sessions.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/audit.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "token",
+    "audit",
+    "cost"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gray2006/dsh-token-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gray2006/dsh-token-guard/issues"
+  },
+  "homepage": "https://github.com/Gray2006/dsh-token-guard#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}
