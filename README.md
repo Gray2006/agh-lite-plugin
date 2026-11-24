@@ -5,6 +5,8 @@
 
 DSH 里的傻瓜式 Token 审计：一个工具，扫一遍本机会话，告诉你钱花在哪、哪几条最值得改。
 
+> **和 AGH（AdGuard Home）无关。** 这里的 AGH 是 [AGH-LITE](https://github.com/Gray2006/AGH-LITE) 的缩写。
+
 不用终端，不用装 Python。装好插件后直接对我说：
 
 > 审计一下我的 token
@@ -69,6 +71,17 @@ DSH 里的傻瓜式 Token 审计：一个工具，扫一遍本机会话，告诉
 | `proxyPort` | 8787 | 代理监听端口 |
 | `maxToolChars` | 4000 | 单条旧 tool 结果保留的字符数 |
 | `keepRecent` | 8 | 最近 N 条消息不动 |
+
+## 和同类插件的区别
+
+| 插件 | 侧重 | 交互 |
+|---|---|---|
+| **agh-lite-plugin** | 会话浪费的快速诊断：哪几条最值得改、估算可省多少 | 对话式 `token_audit` + 面板，零配置 |
+| dsh-context-doctor | 静态注入物审计：AGENTS.md、技能目录、工具 schema 的占比与冲突 | Web 圆环面板 + `context_audit` |
+| dsh-token-ledger | 可追溯的 Token 账本：持久化日志折算为重启安全的总量 | 命令行/库 |
+
+本插件也给出静态前缀拆分（system / 工具 schema / 历史），但重点是决策建议，不是精细记账。
+需要账单对账用母项目 agh-lite。
 
 ## 边界
 

@@ -103,6 +103,7 @@ test('report lists actionable next steps', () => {
   const text = renderReport(result);
   assert.ok(text.includes('下一步'));
   assert.ok(text.includes('开本地代理'));
+  assert.ok(text.includes('结构：静态前缀'));
 });
 
 test('no duplicate when only one call', () => {
