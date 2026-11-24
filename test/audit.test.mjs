@@ -5,7 +5,7 @@ import path from 'node:path';
 import test from 'node:test';
 import zlib from 'node:zlib';
 
-import { auditHome } from '../lib/audit.js';
+import { auditHome, renderReport } from '../lib/audit.js';
 import { loadSession } from '../lib/sessions.js';
 
 function event(type, data, time = 0) {
@@ -92,6 +92,17 @@ test('audit finds duplicate and oversized waste', () => {
   assert.ok(codes.includes('duplicate_tool_calls'));
   assert.ok(codes.includes('oversized_tool_outputs'));
   assert.ok(result.potentialSavings > 0);
+});
+
+test('report lists actionable next steps', () => {
+  const home = tempHome();
+  writeSession(home, buildEvents());
+  const result = auditHome(home, { days: 0 });
+  assert.ok(result.totals.unusedTools.includes('shell'), 'shell is in the schema but never called');
+  assert.ok(result.actions.some((action) => action.title.includes('从没被调用过')));
+  const text = renderReport(result);
+  assert.ok(text.includes('下一步'));
+  assert.ok(text.includes('开本地代理'));
 });
 
 test('no duplicate when only one call', () => {
