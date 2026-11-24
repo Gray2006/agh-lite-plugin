@@ -100,3 +100,16 @@ test('no duplicate when only one call', () => {
   const result = auditHome(home, { days: 0 });
   assert.ok(!result.findings.some((finding) => finding.code === 'duplicate_tool_calls'));
 });
+
+test('estimates cost and caches parse results', () => {
+  const home = tempHome();
+  writeSession(home, buildEvents());
+  const first = auditHome(home, { days: 0 });
+  assert.ok(first.totals.costUsd > 0, 'known model should be priced');
+  const cacheDir = path.join(home, 'agh-lite-plugin-cache');
+  assert.ok(fs.readdirSync(cacheDir).length > 0);
+
+  const second = auditHome(home, { days: 0 });
+  assert.equal(second.totals.totalTokens, first.totals.totalTokens);
+  assert.equal(second.totals.costUsd, first.totals.costUsd);
+});
