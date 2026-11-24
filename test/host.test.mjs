@@ -39,7 +39,7 @@ test('apply registers tools and proxy stats works without upstream', async () =>
     tools.map((tool) => tool.name).sort(),
     ['token_audit', 'token_proxy'],
   );
-  assert.equal(routes.length, 6);
+  assert.equal(routes.length, 9);
   assert.deepEqual(
     routes.map((route) => route.path).sort(),
     [
@@ -49,6 +49,9 @@ test('apply registers tools and proxy stats works without upstream', async () =>
       '/agh-lite-plugin/ping',
       '/agh-lite-plugin/proxy',
       '/agh-lite-plugin/runall',
+      '/agh-lite-plugin/toolset',
+      '/agh-lite-plugin/toolset/apply',
+      '/agh-lite-plugin/toolset/rollback',
     ],
   );
 

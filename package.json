@@ -1,6 +1,6 @@
 {
   "name": "agh-lite-plugin",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "agh-lite 的 DSH 插件版：一个工具扫本机会话，找出 token 浪费并给出可省上限。",
   "type": "module",
   "main": "lib/index.js",
