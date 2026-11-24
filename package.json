@@ -1,6 +1,6 @@
 {
   "name": "dsh-token-guard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH 里的傻瓜式 Token 审计：一个工具扫会话，告诉你钱花在哪、哪几条最值得改。",
   "type": "module",
   "main": "lib/index.js",
