@@ -1,13 +1,15 @@
 {
   "name": "dsh-token-guard",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "DSH 里的傻瓜式 Token 审计：一个工具扫会话，告诉你钱花在哪、哪几条最值得改。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
+    "./client": "./lib/client.js",
     "./audit": "./lib/audit.js",
     "./sessions": "./lib/sessions.js",
+    "./proxy": "./lib/proxy.js",
     "./package.json": "./package.json"
   },
   "files": [
@@ -17,7 +19,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test test/audit.test.mjs"
+    "test": "node --test test/audit.test.mjs test/proxy.test.mjs"
   },
   "keywords": [
     "dsh",
@@ -38,6 +40,9 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
     }
   },
   "engines": {
