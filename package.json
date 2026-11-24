@@ -1,7 +1,7 @@
 {
-  "name": "dsh-token-guard",
-  "version": "0.2.0",
-  "description": "DSH 里的傻瓜式 Token 审计：一个工具扫会话，告诉你钱花在哪、哪几条最值得改。",
+  "name": "agh-lite-plugin",
+  "version": "0.3.0",
+  "description": "agh-lite 的 DSH 插件版：一个工具扫本机会话，找出 token 浪费并给出可省上限。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -31,12 +31,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gray2006/dsh-token-guard.git"
+    "url": "git+https://github.com/Gray2006/agh-lite-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/Gray2006/dsh-token-guard/issues"
+    "url": "https://github.com/Gray2006/agh-lite-plugin/issues"
   },
-  "homepage": "https://github.com/Gray2006/dsh-token-guard#readme",
+  "homepage": "https://github.com/Gray2006/agh-lite-plugin#readme",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

@@ -1,4 +1,7 @@
-# dsh-token-guard
+# agh-lite-plugin
+
+[agh-lite](https://github.com/Gray2006/AGH-LITE) 的 DSH 插件版。名字里的 `agh-lite` 就是母项目；
+插件用 JS 重写，不需要装 Python。
 
 DSH 里的傻瓜式 Token 审计：一个工具，扫一遍本机会话，告诉你钱花在哪、哪几条最值得改。
 
@@ -39,13 +42,13 @@ DSH 里的傻瓜式 Token 审计：一个工具，扫一遍本机会话，告诉
 如果这一版 DSH 的插件页支持「从本地目录安装」，选这个仓库目录即可。
 
 **方式二：手动放目录（一次性）**
-1. 把整个 `dsh-token-guard` 目录复制到
-   `%DSH_HOME%\profiles\<profile>\node_modules\dsh-token-guard`
+1. 把整个 `agh-lite-plugin` 目录复制到
+   `%DSH_HOME%\profiles\<profile>\node_modules\agh-lite-plugin`
 2. 在该 profile 的 `cordis.patch.yml` 里加：
    ```yaml
    - insert:
-       - id: dsh-token-guard
-         name: dsh-token-guard
+       - id: agh-lite-plugin
+         name: agh-lite-plugin
          config:
            days: 30
    ```

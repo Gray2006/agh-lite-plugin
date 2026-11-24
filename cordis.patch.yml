@@ -1,5 +1,5 @@
 - insert:
-    - id: dsh-token-guard
-      name: dsh-token-guard
+    - id: agh-lite-plugin
+      name: agh-lite-plugin
       config:
         days: 30

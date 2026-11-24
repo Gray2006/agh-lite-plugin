@@ -61,7 +61,7 @@ function writeSession(dir, events, { zstd = false } = {}) {
 }
 
 function tempHome() {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'token-guard-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'agh-lite-plugin-'));
 }
 
 test('parses plain session and aggregates usage', () => {

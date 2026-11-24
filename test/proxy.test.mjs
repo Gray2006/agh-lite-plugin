@@ -102,7 +102,7 @@ test('health endpoint reports stats', async () => {
   });
   const proxy = createProxy({ upstream: base(upstream), port: 0, ledger: false });
   const proxyPort = await proxy.start();
-  const health = await fetch(`http://127.0.0.1:${proxyPort}/token-guard/health`).then((response) => response.json());
+  const health = await fetch(`http://127.0.0.1:${proxyPort}/agh-lite-plugin/health`).then((response) => response.json());
   assert.equal(health.ok, true);
   assert.equal(health.requests, 0);
   await proxy.stop();
